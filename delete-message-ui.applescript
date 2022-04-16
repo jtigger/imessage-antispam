@@ -15,6 +15,9 @@ set spamPhrases to spamPhrases & " onlinefuncams.com/"
 set spamPhrases to spamPhrases & " havefuninchat.com/"
 set spamPhrases to spamPhrases & " tastyonlinecams.com/"
 set spamPhrases to spamPhrases & " onlinewildcams.com/"
+set spamPhrases to spamPhrases & " fierycamchat.com/"
+set spamPhrases to spamPhrases & " myflirtycam.com/"
+set spamPhrases to spamPhrases & " mynaughtychat.com/"
 
 on delete_currently_selected_chat()
 	tell application "System Events"
@@ -45,7 +48,7 @@ tell application "System Events"
 							else
 								log "deleting: " & theDescription
 								click theItem
-								delay 10
+								delay 1
 								my delete_currently_selected_chat()
 							end if
 						end if
