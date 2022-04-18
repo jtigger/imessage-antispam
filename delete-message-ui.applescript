@@ -18,6 +18,10 @@ set spamPhrases to spamPhrases & " onlinewildcams.com/"
 set spamPhrases to spamPhrases & " fierycamchat.com/"
 set spamPhrases to spamPhrases & " myflirtycam.com/"
 set spamPhrases to spamPhrases & " mynaughtychat.com/"
+set spamPhrases to spamPhrases & " joinmeoncam.com/"
+set spamPhrases to spamPhrases & " naughtycamhere.com/"
+set spamPhrases to spamPhrases & " evening.thatcamsite2022.com/"
+set spamPhrases to spamPhrases & " tonight.wecamnowbabe.com/"
 
 on delete_currently_selected_chat()
 	tell application "System Events"
