@@ -1,4 +1,4 @@
-set dryRun to true
+set dryRun to false
 
 set spamPhrases to {}
 set spamPhrases to spamPhrases & " is my webcam!"
@@ -22,6 +22,11 @@ set spamPhrases to spamPhrases & " joinmeoncam.com/"
 set spamPhrases to spamPhrases & " naughtycamhere.com/"
 set spamPhrases to spamPhrases & " evening.thatcamsite2022.com/"
 set spamPhrases to spamPhrases & " tonight.wecamnowbabe.com/"
+set spamPhrases to spamPhrases & " viewmyhotcam.com/"
+set spamPhrases to spamPhrases & " chillandcam.com/"
+set spamPhrases to spamPhrases & " ourcamchat.com/"
+set spamPhrases to spamPhrases & " naughtycamhere.com/"
+
 
 on delete_currently_selected_chat()
 	tell application "System Events"
