@@ -26,6 +26,11 @@ set spamPhrases to spamPhrases & " viewmyhotcam.com/"
 set spamPhrases to spamPhrases & " chillandcam.com/"
 set spamPhrases to spamPhrases & " ourcamchat.com/"
 set spamPhrases to spamPhrases & " naughtycamhere.com/"
+set spamPhrases to spamPhrases & " desirablecams.com/"
+set spamPhrases to spamPhrases & " stunnercam.com/"
+set spamPhrases to spamPhrases & " inclinedipping.com/"
+set spamPhrases to spamPhrases & " justfuncams.com/"
+set spamPhrases to spamPhrases & " funcamwithme.com/"
 
 
 on delete_currently_selected_chat()
