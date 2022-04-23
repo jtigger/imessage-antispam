@@ -39,32 +39,38 @@ on delete_currently_selected_chat()
 end delete_currently_selected_chat
 
 tell application "System Events"
-	tell process "Messages"
-		activate
-		set frontmost to true
-		
-		repeat with theItem in entire contents as list -- without "as list" items are mere references
-			try -- some items do not have a description, just skip those; in general, if there's an error, let's do the safe thing and skip it.
-				set theClass to (get class of theItem as string)
-				
-				if theClass = "UI element" then
-					set theDescription to (get description of theItem as string)
-					repeat with spamPhrase in my spamPhrases
-						if theDescription contains spamPhrase then
-							if my dryRun then
-								log "- " & "(class: " & theClass & ") " & theDescription
-							else
-								log "deleting: " & theDescription
-								click theItem
-								delay 1
-								my delete_currently_selected_chat()
-							end if
+	repeat
+		set noSpamFound to true
+		tell process "Messages"
+			activate
+			set frontmost to true
+
+
+			-- reach deep into the UI to grab just the list of conversations.
+			-- this reduces the total objects handled and significantly speeds execution.
+			-- Q: is there a more direct path to this group? This seems really long compared to the levels present in the "Accessibility Inspector" output
+			set theGroup to group 1 of group 1 of group 1 of group 2 of group 1 of group 1 of group 1 of group 2 of group 1 of group 1 of group 1 of group 1 of group 1 of group 1 of group 1 of window 1
+
+			set allConversations to (UI elements of theGroup)
+			repeat with theConversation in allConversations
+				set theDescription to (get description of theConversation as string)
+				repeat with spamPhrase in my spamPhrases
+					if theDescription contains spamPhrase then
+						if my dryRun then
+							log "- " & theDescription
+						else
+							log "deleting: " & theDescription
+							click theConversation
+							delay 1
+							my delete_currently_selected_chat()
+							set noSpamFound to false
 						end if
-					end repeat
-				end if
-			on error errStr number errorNumber
-				log "WARNING: " & errStr & " (" & (errorNumber as string) & ")"
-			end try
-		end repeat
-	end tell
+					end if
+				end repeat -- spamPhrases
+			end repeat -- allConversations
+			if noSpamFound then
+				exit repeat
+			end if
+		end tell
+	end repeat -- (outer-most loop)
 end tell
