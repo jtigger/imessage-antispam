@@ -1,13 +1,6 @@
 set dryRun to false
 
 set spamPhrases to {}
-set spamPhrases to spamPhrases & " is my webcam!"
-set spamPhrases to spamPhrases & " at my cam "
-set spamPhrases to spamPhrases & " is my cam,"
-set spamPhrases to spamPhrases & " on my cam."
-set spamPhrases to spamPhrases & " on my cam!"
-set spamPhrases to spamPhrases & " check out my camera "
-set spamPhrases to spamPhrases & " on my camera"
 
 set spamPhrases to spamPhrases & " playoncamnow.com/"
 set spamPhrases to spamPhrases & " onlinelustycams.com/"
@@ -31,6 +24,7 @@ set spamPhrases to spamPhrases & " stunnercam.com/"
 set spamPhrases to spamPhrases & " inclinedipping.com/"
 set spamPhrases to spamPhrases & " justfuncams.com/"
 set spamPhrases to spamPhrases & " funcamwithme.com/"
+set spamPhrases to spamPhrases & " getyouritemfast.com/"
 
 
 on delete_currently_selected_chat()
