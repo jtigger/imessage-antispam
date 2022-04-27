@@ -25,7 +25,8 @@ set spamPhrases to spamPhrases & " inclinedipping.com/"
 set spamPhrases to spamPhrases & " justfuncams.com/"
 set spamPhrases to spamPhrases & " funcamwithme.com/"
 set spamPhrases to spamPhrases & " getyouritemfast.com/"
-
+set spamPhrases to spamPhrases & " itemjust4you.com/"
+set spamPhrases to spamPhrases & " lockeditems.com/"
 
 on delete_currently_selected_chat()
 	tell application "System Events"
@@ -64,11 +65,16 @@ tell application "System Events"
 							delay 1
 							my delete_currently_selected_chat()
 							set noSpamFound to false
+							exit repeat
 						end if
 					end if
 				end repeat -- spamPhrases
+				if not noSpamFound then
+					exit repeat
+				end if
 			end repeat -- allConversations
 			if noSpamFound then
+				log "> no spam found. Done."
 				exit repeat
 			end if
 		end tell
